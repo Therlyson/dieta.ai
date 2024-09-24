@@ -4,6 +4,6 @@ export interface DataProps {
     height: string,
     age: string, 
     gender: string, 
-    ohjective: string, 
+    objective: string, 
     level: string
 }
