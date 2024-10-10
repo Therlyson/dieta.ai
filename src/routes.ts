@@ -10,7 +10,9 @@ export async function routes(fastify: FastifyInstance, options: FastifyPluginOpt
         try{
             //extraindo o JSON
             let jsonString = resultText.replace(/```\w*\n/g, '').replace(/\n```/g, '').trim();
-            return reply.send(JSON.parse(jsonString));
+            let jsonObject = JSON.parse(jsonString)
+
+            return reply.send({ data: jsonObject });   
         }catch(err){
             console.log(err);
         }

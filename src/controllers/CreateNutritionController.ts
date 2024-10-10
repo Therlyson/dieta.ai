@@ -13,6 +13,6 @@ export class CreateNutritionController{
             {name, weight, height, age, gender, objective, level}
         );
 
-        reply.send(nutrition);
+        reply.send({data: nutrition});
     }
 }

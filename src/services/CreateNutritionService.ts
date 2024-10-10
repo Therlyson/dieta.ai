@@ -17,7 +17,8 @@ export class CreateNutritionService{
             propriedade horário com horário da refeição, propriedade nome com nome e a propriedade alimentos com array 
             contendo os alimentos dessa refeição e pode incluir uma propreidade como suplementos contendo array com 
             sugestão de suplemento que é indicado para o sexo dessa pessoa e o objetivo dela e não retorne nenhuma 
-            observação alem das passadas no prompt, retorne em json e nenhuma propriedade pode ter acento.`;
+            observação alem das passadas no prompt, retorne em json e nenhuma propriedade pode ter acento, mas os contéudos das propriedades tem que ter os acentos corretos em
+            português BR.`;
             const result = await model.generateContent(prompt);
 
             console.log(JSON.stringify(result, null, 2));
@@ -29,7 +30,7 @@ export class CreateNutritionService{
                 return JSON.parse(jsonString);
             }
         }catch(err){
-            console.log("Error JSON: ", err);
+            console.log("Error JSON: ", err);   
             throw new Error("Failed create.");
         }
     }
